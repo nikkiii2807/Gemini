@@ -1,0 +1,130 @@
+.sidebar{
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 25px 15px;
+}
+.sidebar img{
+    width: 20px;
+}
+.sidebar .menu{
+    display: block;
+    cursor: pointer;
+    margin-left:10px ;
+}
+.sidebar .newchat{
+    margin-top: 50px;
+    display:inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+}
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s;
+}
+
+.sidebar .recent-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.sidebar .recent-entry{
+    display: flex;
+    align-items: start;
+    gap:10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+}
+.sidebar .recent-entry:hover {
+    background-color: #d3dae4; /* Change background on hover */
+}
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between bottom items */
+    padding: 20px 0; /* Padding around the bottom section */
+    border-top: 1px solid #d3dae4; /* Add a top border to separate it from the main content */
+}
+
+.sidebar .bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 10px;
+    color: gray;
+    cursor: pointer;
+    background-color: #e6eaf1; /* Background color similar to the recent section */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar .bottom-item:hover {
+    background-color: #d3dae4; /* Slightly darker on hover */
+}
+
+.sidebar .bottom-item img {
+    width: 20px; /* Icon size */
+}
+
+@media(max-width: 900px) {
+    .sidebar {
+        width: 80px; /* Collapse width */
+        padding: 15px 10px;
+    }
+
+    .sidebar .newchat p,
+    .sidebar .bottom-item p,
+    .recent p {
+        display: none; /* Hide text labels */
+    }
+
+    .sidebar .recent-entry p {
+        display: none; /* Hide recent chat labels */
+    }
+
+    .sidebar .newchat,
+    .sidebar .bottom-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    /* Optionally, you can add a toggle button for mobile screens */
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 999;
+        background-color: #f0f4f9;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,246 @@
+.main{
+    flex:1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+.main .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+.main .nav img{
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+.main-container{
+    max-width: 900px;
+    margin: auto;
+}
+.main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight:500;
+    padding: 20px;
+}
+.main .greet span{
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546); /* Removed the extra parentheses */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cards {
+    display: flex;
+    justify-content: space-between; /* Spread the cards evenly */
+    margin-top: 30px;
+    gap: 20px; /* Add space between the cards */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Add horizontal scrolling if cards overflow */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    border-radius: 10px;
+    padding: 15px;
+    height: 200px;
+    width: 200px; /* Fixed width for each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 35px; /* Adjust icon size */
+    padding: 5px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    bottom:10px;
+    right: 10px;
+
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #585858;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.main-bottom{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin:auto;
+  }
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.search-box img{
+    width: 24px;
+    cursor: pointer;
+}
+.search-box input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+.main .bottom-info{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y:scroll ;
+}
+.result::-webkit-scrollbar{
+    display: none;
+}
+.result-title{
+    margin:40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+}
+.result img{
+    width: 40px;
+    border-radius: 50%;
+}
+.result-data{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.loader{
+    display: flex;
+    width: 100%;
+    gap:10px;
+    flex-direction: column;
+}
+.loader hr{
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s infinite linear;
+}
+@keyframes loader {
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
+.result-data p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+@media (max-width: 600px) {
+    .main-container {
+        padding: 10px;
+        width: 100%; /* Ensure container uses full width on smaller screens */
+    }
+
+    .greet {
+        font-size: 36px; /* Smaller font size for smaller screens */
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .cards {
+        flex-wrap: wrap; /* Allow cards to wrap */
+        justify-content: center; /* Center the cards */
+        margin-top: 20px;
+        gap: 15px; /* Reduce gap between cards */
+    }
+
+    .card {
+        width: 100%; /* Full width for each card on smaller screens */
+        max-width: 250px; /* Set a max width */
+        height: auto; /* Adjust height to content */
+        margin-bottom: 15px; /* Add margin between cards */
+    }
+
+    .card p {
+        font-size: 16px; /* Slightly smaller font for card text */
+    }
+
+    .nav {
+        padding: 15px; /* Reduce padding in the navigation */
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .nav img {
+        width: 30px; /* Adjust image size */
+    }
+
+    .result {
+        padding: 0 10px; /* Add padding for better readability */
+    }
+
+    .result-title p {
+        font-size: 18px; /* Adjust title size */
+    }
+
+    .search-box {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .search-box img {
+        width: 20px; /* Reduce icon size */
+    }
+
+    .search-box input {
+        font-size: 16px; /* Smaller input text */
+    }
+
+    .bottom-info {
+        font-size: 12px; /* Adjust info font size */
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    .main-bottom {
+        padding: 10px; /* Adjust bottom padding */
+    }
+}
